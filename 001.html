@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>001</title>
+    <style>
+        body {
+            background-color: bisque;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>desafio</h2>
+    <script>
+        function exibeMensagem(endereco) {
+            return (
+                "o usuario mora em " +
+                endereco.cidade +
+                endereco.uf +
+                ", no bairro" +
+                endereco.bairro +
+                ", na rua" +
+                endereco.rua +
+                " n°" +
+                "," +
+                endereco.numero +
+                ".");
+
+
+        }
+
+        var endereco = {
+            rua: ": Rua dos pinheiros",
+            numero: 1293,
+            bairro: ": centro",
+            cidade: ": sao paulo",
+            uf: "(SP)"
+        }
+
+        console.log(exibeMensagem(endereco));
+    </script>
+</body>
+
+</html>

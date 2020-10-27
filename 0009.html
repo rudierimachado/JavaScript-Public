@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>desafio javascript modulo 02</title>
+</head>
+
+<body>
+    <button onClick="gerarBotao()" style="width: 150px; height: 40px;">Gerar quadrado 100px x 100px</button>
+    <input type="text" name="nome">
+    <button onClick="adicionar()">Adicionar</button>
+
+    <script>
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function gerarBotao() {
+            var quadrado = document.createElement('div');
+            quadrado.style.backgroundColor = '#FF0000';
+            quadrado.style.height = '100px';
+            quadrado.style.width = '100px';
+            quadrado.style.margin = '15px';
+            quadrado.onmouseover = function mudaCorBotao() {
+                quadrado.style.backgroundColor = getRandomColor();
+            }
+            var corpoSite = document.body;
+            corpoSite.appendChild(quadrado);
+        }
+
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var lista = document.createElement('ul');
+        nomes.forEach(nome => {
+            var itemLista = document.createElement('li');
+            itemLista.innerHTML = nome;
+            lista.appendChild(itemLista);
+        });
+
+        var corpoSite = document.body;
+        corpoSite.appendChild(lista);
+
+        function adicionar() {
+            var itemLista = document.createElement('li');
+            var inputNome = document.getElementsByName('nome')[0];
+            itemLista.innerHTML = inputNome.value;
+            inputNome.value = "";
+            lista.appendChild(itemLista);
+        }
+    </script>
+</body>
+
+</html>
